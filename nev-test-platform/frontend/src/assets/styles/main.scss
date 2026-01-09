@@ -1,0 +1,140 @@
+// Reset and base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Microsoft YaHei', 'PingFang SC', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  background-color: #f5f7fa;
+}
+
+// Custom variables
+:root {
+  --primary-color: #409eff;
+  --success-color: #67c23a;
+  --warning-color: #e6a23c;
+  --danger-color: #f56c6c;
+  --info-color: #909399;
+  
+  --sidebar-width: 220px;
+  --header-height: 60px;
+}
+
+// Layout styles
+.app-container {
+  padding: 20px;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  
+  .page-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #303133;
+  }
+}
+
+// Card styles
+.el-card {
+  border-radius: 8px;
+  
+  &.stat-card {
+    text-align: center;
+    
+    .stat-value {
+      font-size: 32px;
+      font-weight: bold;
+      color: var(--primary-color);
+      margin: 10px 0;
+    }
+    
+    .stat-label {
+      color: #909399;
+      font-size: 14px;
+    }
+    
+    &.success .stat-value {
+      color: var(--success-color);
+    }
+    
+    &.danger .stat-value {
+      color: var(--danger-color);
+    }
+    
+    &.warning .stat-value {
+      color: var(--warning-color);
+    }
+  }
+}
+
+// Table styles
+.el-table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+// Status tags
+.status-tag {
+  &.online, &.available, &.passed, &.completed {
+    --el-tag-bg-color: #f0f9eb;
+    --el-tag-border-color: #e1f3d8;
+    --el-tag-text-color: #67c23a;
+  }
+  
+  &.offline, &.failed, &.error {
+    --el-tag-bg-color: #fef0f0;
+    --el-tag-border-color: #fde2e2;
+    --el-tag-text-color: #f56c6c;
+  }
+  
+  &.busy, &.running, &.in_use, &.pending {
+    --el-tag-bg-color: #ecf5ff;
+    --el-tag-border-color: #d9ecff;
+    --el-tag-text-color: #409eff;
+  }
+  
+  &.maintenance, &.upgrading, &.warning {
+    --el-tag-bg-color: #fdf6ec;
+    --el-tag-border-color: #faecd8;
+    --el-tag-text-color: #e6a23c;
+  }
+}
+
+// Animation
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #dcdfe6;
+  border-radius: 3px;
+  
+  &:hover {
+    background-color: #c0c4cc;
+  }
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f5f7fa;
+}
